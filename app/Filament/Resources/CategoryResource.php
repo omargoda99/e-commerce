@@ -35,6 +35,9 @@ class CategoryResource extends Resource
                 Forms\Components\Textarea::make('description'),
                 Forms\Components\FileUpload::make('image')->required(),
                 Forms\Components\Toggle::make('isActive')->required(),
+                Forms\Components\Select::make('attributes')
+                    ->relationship('attributes', 'name')
+                    ->required(),
             ]);
     }
 
